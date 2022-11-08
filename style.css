@@ -1,0 +1,14 @@
+/*
+Theme Name: Rubens Site
+Theme URI: https://rubenschammas-voz.com.br
+Author: Adriel Cavalcante
+Author URI: https://github.com/AdrielCavalcante
+Description: É um website de portfólio para locutor, demandado por Rubens Chammas
+Requires at least: 5.6
+Tested up to: 5.9
+Requires PHP: 7.0
+Version: 1.0
+Tags: Locutor, portfólio de locutor, locução, serviço de locução, serviço de locutor
+*/
+
+@import "css/style.css";
