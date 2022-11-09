@@ -4,6 +4,7 @@ function theme_add_scripts()
 {
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css');
     wp_enqueue_style('bootstrap-icons','https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css'); 
+    wp_enqueue_style('fontawesome', 'https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css');
     wp_enqueue_style('style-css', get_template_directory_uri() . '/style.css');
     wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js');
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js');
