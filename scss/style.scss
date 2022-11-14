@@ -1,7 +1,55 @@
+@use 'mixins';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.mobile {
+    height: 100vh;
+    background-color: #263445;
+
+    header {
+        background-color: transparent;
+        position: unset;
+
+        * {
+            background-color: transparent;
+        }
+    }
+
+    #menu {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-left: 0;
+
+            li {
+                text-align: center;
+
+                a {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    main, footer {
+        display: none;
+        * {
+            display: none;
+        }
+    }
 }
 
 h1 {
@@ -9,41 +57,137 @@ h1 {
 }
 
 header {
+    position: fixed;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
     padding: .25rem 1rem;
-    background-color: #263445;
+    width: 100%;
+    background-color: #26344599;
     color: #FFF;
+
+    @include mixins.mobile {
+       align-items: center;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+
+            li {
+                margin: 0 1.5rem;
+
+                a {
+                    text-decoration: none;
+                    color: #FFF;
+                    font-weight: 600;
+
+                    &:hover {
+                        color: #FFF;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        i {
+            font-size: 1.75rem;
+            cursor: pointer;
+        }
+    }
 }
 
 main {
     .topo {
         color: #FFF;
         background-color: #000;
-        min-height: 400px;
+        min-height: 85vh;
+
+        @include mixins.notebook {
+            min-height: 80vh;
+        }
+
+        @include mixins.tablet {
+            min-height: 50vh;
+        }
 
         article {
+            padding-top: 5rem !important;
             padding: 1rem;
             text-transform: uppercase;
 
             &:first-child {
                 background-color: rgb(82, 8, 172);
+
+                @include mixins.mobile {
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75)),url("http://rubenssite.local/wp-content/uploads/2022/11/image-1.jpg");
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    
+                }
+            }
+
+            &:last-child {
+                background-image: url('http://rubenssite.local/wp-content/uploads/2022/11/image-1.jpg');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 4rem;
                 margin: 1.5rem 0;
+                position: relative;
+
+                @include mixins.notebook {
+                    font-size: 3.5rem;
+                }
+
+                @include mixins.tablet {
+                    font-size: 3rem;
+                }
+
+                @include mixins.mobile {
+                    font-size: 2.25rem;
+                    text-align: center;
+                }
             }
     
             h2 {
                 text-transform: capitalize;
-                font-size: 1.5rem;
+                font-size: 2.5rem;
+
+                @include mixins.notebook {
+                    font-size: 2rem;
+                }
+
+                @include mixins.tablet {
+                    font-size: 1.5rem;
+                }
+
+                @include mixins.mobile {
+                    font-size: 1.75rem;
+                    text-align: center;
+                }
             }
 
             p {
                 text-align: justify;
-                font-size: .75rem;
+                font-size: 1.25rem;
                 margin-bottom: 2rem;
+
+                @include mixins.notebook {
+                    font-size: 1rem;
+                }
+
+                @include mixins.tablet {
+                    font-size: .75rem;
+                }
+
+                @include mixins.mobile {
+                    font-size: 1rem;
+                }
             }
     
             div {
@@ -54,6 +198,23 @@ main {
                 a {
                     color: #FFF;
                     text-transform: uppercase;
+                    font-size: 1.25rem;
+
+                    @include mixins.notebook {
+                        font-size: 1rem;
+                    }
+
+                    &:last-child {
+                        padding: 1rem .5rem;
+
+                        @include mixins.tablet {
+                            padding: 0.5rem 1rem;
+                        }
+
+                        @include mixins.mobile {
+                            padding: 1rem 1.5rem;
+                        }
+                    }
 
                     &:hover {
                         color: #b707fd;
@@ -62,7 +223,7 @@ main {
     
                 button {
                     text-transform: uppercase;
-                    padding: .5rem 1rem;
+                    padding: 1rem .5rem;
                     color: #FFF;
                     background-color: #9a0eff;
                     border: 1px solid #9a0eff;
@@ -71,9 +232,35 @@ main {
 
                     &:hover {
                         background-color: #b707fd;
+                    }
 
+                    @include mixins.tablet {
+                        padding: 0.5rem 1rem;
                     }
                 }
+            }
+        }
+    }
+
+    #portfolio {
+        min-height: 40vh;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        .card {
+            padding: 1rem;
+            border-radius: 8px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h5 {
+                text-align: center;
+            }
+
+            audio {
+                width: 100%;
             }
         }
     }
@@ -81,10 +268,15 @@ main {
 
 footer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding: 1rem;
     background-color: #263445;
     color: #FFF;
+
+    @include mixins.mobile {
+        gap: 1rem;
+    }    
 
     section {
         display: flex;

@@ -18,13 +18,10 @@ function theme_add_config()
     register_nav_menus(
         array(
             'main_menu' => 'Main Menu'
-            // 'identificador' => 'nome'
         )
     );
 
     add_theme_support('custom-logo', array(
-        'width' => 238,
-        'height' => 80,
         'flex-height' => false,
         'flex-width' => true
     ));

@@ -12,4 +12,27 @@
 <body id="body" <?php body_class(); ?>>
 <header>
     <h1>LOGO</h1>
+    <nav class="nav-menu d-none d-md-block">
+        <?php
+        wp_nav_menu(
+            array(
+                'theme_location' => 'main_menu', // identificador do menu
+                'depth' => 1 // limita submenus
+            )
+        )
+        ?>
+    </nav>
+    <nav class="nav-menu-mobile d-block d-md-none">
+        <i class="fas fa-bars " id="hambuguer" onclick="menuMobile();"></i>
+    </nav>
 </header>
+<div class="d-none flex-column" id="menu">
+    <?php
+        wp_nav_menu(
+            array(
+                'theme_location' => 'main_menu', // identificador do menu
+                'depth' => 1 // limita submenus
+            )
+        )
+        ?>
+</div>

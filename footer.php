@@ -1,5 +1,5 @@
-<footer>
-    <section class="col-8">
+<footer id="contato">
+    <section class="col-12 col-md-8">
        <a href="#">
            <i class="fab fa-whatsapp"></i>
            <span>21 98807-5334</span>
@@ -17,7 +17,7 @@
            <span>21 98807-5334</span>
        </a>
     </section>
-    <section class="col-4" style="gap: 0;">
+    <section class="col-12 col-md-4" style="gap: 0;">
             <h1>LOGO</h1>
             <span>Rubenschammasvoz &copy; 2022</span>
     </section>
