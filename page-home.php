@@ -16,10 +16,10 @@
         </article>
     </section>
     <section class="container" id="portfolio"> 
-        <div class="row">
+        <div class="row audios">
             <div class="col-md-4">
                 <div class="card">
-                    <h5>teste</h5>
+                    <h5>Audio de exemplo 1</h5>
                     <audio controls>
                         <source src="https://www.computerhope.com/jargon/m/example.mp3" type="audio/ogg">
 
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <h5>teste</h5>
+                    <h5>Audio de exemplo 2</h5>
                     <audio controls>
                         <source src="https://www.computerhope.com/jargon/m/example.mp3" type="audio/ogg">
 
@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <h5>teste</h5>
+                    <h5>Audio de exemplo 3</h5>
                     <audio controls>
                         <source src="https://www.computerhope.com/jargon/m/example.mp3" type="audio/ogg">
 

@@ -1,4 +1,9 @@
 @use 'mixins';
+@use 'cores';
+
+@import "cores.scss";
+@import url('http://db.onlinewebfonts.com/c/c25432bd2c16dfe9cbff2d2968e73fcb?family=AllRoundGothicW01-Demi');
+@font-face {font-family: "AllRoundGothicW01-Demi"; src: url("http://db.onlinewebfonts.com/t/c25432bd2c16dfe9cbff2d2968e73fcb.eot"); src: url("http://db.onlinewebfonts.com/t/c25432bd2c16dfe9cbff2d2968e73fcb.eot?#iefix") format("embedded-opentype"), url("http://db.onlinewebfonts.com/t/c25432bd2c16dfe9cbff2d2968e73fcb.woff2") format("woff2"), url("http://db.onlinewebfonts.com/t/c25432bd2c16dfe9cbff2d2968e73fcb.woff") format("woff"), url("http://db.onlinewebfonts.com/t/c25432bd2c16dfe9cbff2d2968e73fcb.ttf") format("truetype"), url("http://db.onlinewebfonts.com/t/c25432bd2c16dfe9cbff2d2968e73fcb.svg#AllRoundGothicW01-Demi") format("svg"); }
 
 * {
     margin: 0;
@@ -8,7 +13,7 @@
 
 .mobile {
     height: 100vh;
-    background-color: #263445;
+    background-color: $padrao;
 
     header {
         background-color: transparent;
@@ -56,12 +61,17 @@ h1 {
     white-space: nowrap;
 }
 
+.desfixar {
+    background-color: $padrao;
+    z-index: 1;
+}
+
 header {
     position: fixed;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: .25rem 1rem;
+    align-items: center;
+    padding: 1rem;
     width: 100%;
     background-color: #26344599;
     color: #FFF;
@@ -70,8 +80,19 @@ header {
        align-items: center;
     }
 
+    @include mixins.fino {
+        a {
+            img {
+                width: 170px;
+                height: 55px;
+            }
+        }
+     }
+
     nav {
         ul {
+            padding: 0;
+            margin: 0;
             list-style: none;
             display: flex;
             align-items: center;
@@ -93,7 +114,8 @@ header {
         }
 
         i {
-            font-size: 1.75rem;
+            font-size: 2.5rem;
+            margin-right: 1.5rem;
             cursor: pointer;
         }
     }
@@ -114,18 +136,17 @@ main {
         }
 
         article {
-            padding-top: 5rem !important;
+            padding-top: 8rem !important;
             padding: 1rem;
             text-transform: uppercase;
 
             &:first-child {
-                background-color: rgb(82, 8, 172);
+                background-color: #6414FF;
 
                 @include mixins.mobile {
-                    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75)),url("http://rubenssite.local/wp-content/uploads/2022/11/image-1.jpg");
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75)),url("http:http://rubenssite.local/wp-content/uploads/2022/11/image-1.jpg");
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
-                    
                 }
             }
 
@@ -136,9 +157,11 @@ main {
             }
 
             h1 {
+                font-family: "AllRoundGothicW01-Demi";
                 font-size: 4rem;
                 margin: 1.5rem 0;
                 position: relative;
+                
 
                 @include mixins.notebook {
                     font-size: 3.5rem;
@@ -151,6 +174,10 @@ main {
                 @include mixins.mobile {
                     font-size: 2.25rem;
                     text-align: center;
+                }
+
+                @include mixins.fino {
+                    font-size: 1.75rem;
                 }
             }
     
@@ -170,6 +197,10 @@ main {
                     font-size: 1.75rem;
                     text-align: center;
                 }
+
+                @include mixins.fino {
+                    font-size: 1.5rem;
+                }
             }
 
             p {
@@ -188,6 +219,10 @@ main {
                 @include mixins.mobile {
                     font-size: 1rem;
                 }
+
+                @include mixins.fino {
+                    font-size: .85rem;
+                }
             }
     
             div {
@@ -204,6 +239,10 @@ main {
                         font-size: 1rem;
                     }
 
+                    @include mixins.fino {
+                        font-size: .75rem;
+                    }
+
                     &:last-child {
                         padding: 1rem .5rem;
 
@@ -217,7 +256,7 @@ main {
                     }
 
                     &:hover {
-                        color: #b707fd;
+                        color: $secundaria;
                     }
                 }
     
@@ -225,13 +264,14 @@ main {
                     text-transform: uppercase;
                     padding: 1rem .5rem;
                     color: #FFF;
-                    background-color: #9a0eff;
-                    border: 1px solid #9a0eff;
+                    background-color: #4806a7;
+                    border: 1px solid #4806a7;
                     border-radius: 8px;
                     transition: .5s;
 
                     &:hover {
-                        background-color: #b707fd;
+                        background-color: $principal;
+                        border-color: $principal;
                     }
 
                     @include mixins.tablet {
@@ -247,20 +287,26 @@ main {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
 
-        .card {
-            padding: 1rem;
-            border-radius: 8px;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            h5 {
-                text-align: center;
+        .audios {
+            .card {
+                padding: 1rem;
+                border-radius: 8px;
+                min-height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+    
+                h5 {
+                    text-align: center;
+                }
+    
+                audio {
+                    width: 100%;
+                }
             }
 
-            audio {
-                width: 100%;
+            @include mixins.mobile {
+                gap: 1rem;
             }
         }
     }
@@ -271,7 +317,7 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     padding: 1rem;
-    background-color: #263445;
+    background-color: $padrao;
     color: #FFF;
 
     @include mixins.mobile {
@@ -294,7 +340,7 @@ footer {
             text-decoration: none;
 
             &:hover {
-                color: #b707fd;
+                color: $secundaria;
             }
 
             i {
