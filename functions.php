@@ -9,6 +9,7 @@ function theme_add_scripts()
     wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js');
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js');
     wp_enqueue_script('vuejs', 'https://unpkg.com/vue@3/dist/vue.global.js');
+    wp_enqueue_script('jquery', 'http://code.jquery.com/jquery-1.11.3.min.js');
 }
 
 add_action('wp_enqueue_scripts', 'theme_add_scripts');

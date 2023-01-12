@@ -75,6 +75,7 @@ header {
     width: 100%;
     background-color: #26344599;
     color: #FFF;
+    z-index: 1;
 
     @include mixins.mobile {
        align-items: center;
@@ -151,7 +152,6 @@ main {
             }
 
             &:last-child {
-                background-image: url('http://rubenssite.local/wp-content/uploads/2022/11/image-1.jpg');
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
             }
@@ -283,9 +283,15 @@ main {
     }
 
     #portfolio {
-        min-height: 40vh;
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
+
+        h2 {
+            font-family: "AllRoundGothicW01-Demi";
+            font-size: 2.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
 
         .audios {
             .card {
@@ -307,6 +313,34 @@ main {
 
             @include mixins.mobile {
                 gap: 1rem;
+            }
+        }
+    }
+    
+    #sobre {
+        .rubinho {
+            width: 500px;
+
+            @include mixins.notebook {
+                width: 400px;
+            }
+
+            @include mixins.tablet {
+                width: 300px;
+            }
+
+            @include mixins.mobile {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-family: "AllRoundGothicW01-Demi";
+            font-size: 2.5rem;
+            margin: 1.5rem 0;
+
+            @include mixins.mobile {
+                text-align: center;
             }
         }
     }
