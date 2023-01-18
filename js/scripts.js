@@ -16,6 +16,10 @@ function menuMobile() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    //Data atual
+    var d = new Date();
+    document.getElementById("date").innerHTML = "<span>Rubenschammasvoz &copy "+d.getFullYear()+"</span>";
     
     jQuery(document).ready(function($){
         //Textillate
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //Parallax
         setTimeout(function() {
-            $('#lateral').parallax({imageSrc: 'http://rubenschammasvoz.com.br/wp-content/uploads/2023/01/estudio.jpeg'});
+            $('#lateral').parallax({imageSrc: 'http://rubenschammasvoz.com.br/wp-content/uploads/2023/01/estudio.jpg'});
         
         }, 100);
     });

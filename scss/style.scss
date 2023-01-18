@@ -148,22 +148,17 @@ main {
 
             h1 {
                 font-family: "AllRoundGothicW01-Demi";
-                font-size: 4rem;
+                font-size: 3.75rem;
                 margin: 0;
                 position: relative;
                 color: $action;
 
                 @include mixins.notebook {
-                    font-size: 3.5rem;
+                    font-size: 3rem;
                 }
 
                 @include mixins.tablet {
-                    font-size: 2.5rem;
-                }
-
-                @include mixins.mobile {
                     font-size: 2.25rem;
-                    text-align: center;
                 }
 
                 @include mixins.fino {
@@ -231,7 +226,7 @@ main {
                     }
 
                     &:hover {
-                        color: $secundaria;
+                        color: #6414FF;
                     }
                 }
     
@@ -247,8 +242,8 @@ main {
                     transition: .5s;
 
                     &:hover {
-                        background-color: $principal;
-                        border-color: $principal;
+                        background-color: $padrao;
+                        border-color: $padrao;
                     }
 
                     @include mixins.tablet {
@@ -264,19 +259,36 @@ main {
         }
         .side {
             text-align: center;
-            background-image: url('http://rubenschammasvoz.com.br/wp-content/uploads/2023/01/rubinho.png');
             background-size: contain;
             background-repeat: no-repeat;
-            background-position-x: center; 
+            background-position-x: left; 
             justify-content: center; 
             align-items: center; 
             flex-direction: column;
 
+            div {
+                margin-top: 10rem;
+                margin-left: 4.5rem;
+
+                @include mixins.notebook {
+                    margin-left: 7.5rem;
+                }
+
+                @include mixins.tablet {
+                    margin-left: 0;
+                }
+
+            }
+
             h4 {
-                text-align: justify;
+                text-align: center;
                 font-size: 2.25rem;
                 margin-bottom: 1rem;
                 text-transform: none;
+
+                @include mixins.tablet {
+                    font-size: 2rem;
+                }
             }
         }
     }
@@ -289,6 +301,14 @@ main {
 
         @include mixins.notebook {
             min-height: 55vh;
+        }
+
+        #lateral {
+            div {
+                padding: 1rem;
+                background-color: rgba(0,0,0,.35);
+                border-radius: 16px;
+            }
         }
 
         article {
@@ -314,7 +334,7 @@ main {
         }
     }
 
-    #portfolio {
+    #spot {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
 
@@ -326,6 +346,12 @@ main {
         }
 
         .audios {
+            justify-content: center;
+
+            .col-md-4 {
+                margin-bottom: 1rem;
+            }
+
             .card {
                 padding: 1rem;
                 border-radius: 8px;
@@ -348,21 +374,16 @@ main {
                     width: 100%;
                 }
             }
-
-            @include mixins.mobile {
-                gap: 1rem;
-            }
         }
     }
 
     .interessado {
-        background-color: $action;
+        background-color: #6414FF;
         width: 100%;
         flex-direction: column;
         align-items: center;
         padding: 1.5rem 0;
         margin-top: 1rem;
-        margin-bottom: 1rem;
 
         h4 {
             color: #FFF;
@@ -387,8 +408,8 @@ main {
             transition: .5s;
 
             &:hover {
-                background-color: $principal;
-                border-color: $principal;
+                background-color: $padrao;
+                border-color: $padrao;
                 color: #FFF;
             }
 
@@ -457,7 +478,15 @@ footer {
 }
 
 .parallax-mirror {
-    filter: brightness(0.75);
+    img {
+        @include mixins.tablet {
+            filter: brightness(0.75);
+        }
+    }
+}
+
+aside {
+    padding-right: 1rem;
 }
 
 .rubinho {
