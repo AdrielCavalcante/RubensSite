@@ -50,11 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 $('.custom-logo').attr('src', 'http://rubenschammasvoz.com.br/wp-content/uploads/2023/01/logoTextual.png');
             }
         });
-
-        //Parallax
-        setTimeout(function() {
-            $('#lateral').parallax({imageSrc: 'http://rubenschammasvoz.com.br/wp-content/uploads/2023/01/estudio.jpg'});
-        
-        }, 100);
     });
 });

@@ -2,7 +2,7 @@
 
 <main class="container-fluid">
     <section class="intro row">
-        <article class="col-12 col-sm-6">
+        <article class="col-12 col-md-6">
             <img src="http://rubenschammasvoz.com.br/wp-content/uploads/2023/01/wave-e1673906673516.png" style="width: 100%; height: 90px;" alt="">
             <h1 class="slogan"><?php the_field('slogan'); ?></h1>
             <img src="http://rubenschammasvoz.com.br/wp-content/uploads/2023/01/wave-e1673906673516.png" style="width: 100%; height: 90px;" alt="">
@@ -30,7 +30,7 @@
         </div>
     </section>
     <section class="row topo" id="estudio">
-        <article class="d-flex align-items-center justify-content-center col-12 col-lg-8" id="lateral">
+        <article class="d-flex align-items-center justify-content-center col-12 col-lg-8" id="lateral" style="background-image: url(<?php the_field('fotoEstudio'); ?>); background-size: cover; background-position: center;">
             <div class="d-block d-lg-none">
                 <?php the_field('SobreEstudio'); ?>
             </div>
@@ -44,17 +44,22 @@
         <div class="row audios">
         <?php $the_query = new WP_Query(['post_type' => 'post']); 
             if ( $the_query->have_posts() ) :
-
+            $i = 0;
             while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                 <div class="col-md-4">
                     <div class="card">
                         <h5><?php the_title(); ?></h5>
-                        <i class="fas fa-microphone"></i>
-                        <audio controls>
+                        <i class="fas fa-microphone" style="cursor: pointer;" onClick="playAudio(<?php echo $i; ?>)"></i>
+                        <audio controls id="estilo<?php echo $i++; ?>">
                             <source src="<?php the_field('audio') ?>" type="audio/ogg">
 
                             Seu navegador não suporte reprodutor de audio
                         </audio>
+                        <script>
+                            function playAudio(id) {
+                                document.getElementById("estilo"+id).play();
+                            }
+                        </script>
                     </div>
                 </div>
             <?php endwhile; 

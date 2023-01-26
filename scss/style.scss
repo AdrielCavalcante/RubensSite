@@ -134,7 +134,7 @@ main {
         margin: 0;
 
         @include mixins.tablet {
-            min-height: 55vh;
+            min-height: 40vh;
         }
 
         article {
@@ -266,6 +266,10 @@ main {
             align-items: center; 
             flex-direction: column;
 
+            @include mixins.tablet {
+                align-items: flex-start; 
+            }
+
             div {
                 margin-top: 10rem;
                 margin-left: 4.5rem;
@@ -389,6 +393,10 @@ main {
             color: #FFF;
             margin-bottom: 1rem;
             text-align: center;
+
+            @include mixins.mobile {
+                padding: 0 .25rem;
+            }
         }
 
         a {
@@ -487,6 +495,10 @@ footer {
 
 aside {
     padding-right: 1rem;
+
+    @include mixins.mobile {
+        padding-left: 1rem;
+    }
 }
 
 .rubinho {
