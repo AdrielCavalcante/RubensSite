@@ -29,6 +29,26 @@
             </div>
         </div>
     </section>
+    <section class="interessado" style="margin-top: 0;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; color: white;">
+                <div style="text-align: center;" class="col-5 col-md-2">
+                    <i class="far fa-random" style="font-size: 1.75rem; margin-bottom: 0.25rem;"></i>
+                    <h6>Flexibilidade</h6>
+                </div>
+                <div style="text-align: center;" class="col-5 col-md-2">
+                    <i class="fas fa-expand-arrows-alt" style="font-size: 1.75rem; margin-bottom: 0.25rem;"></i>
+                    <h6>Versatilidade</h6>
+                </div>
+                <div style="text-align: center;" class="col-5 col-md-2">
+                    <i class="far fa-file-certificate" style="font-size: 1.75rem; margin-bottom: 0.25rem;"></i>
+                    <h6>Credibilidade</h6>
+                </div>
+                <div style="text-align: center;" class="col-5 col-md-2">
+                    <i class="far fa-head-side-headphones" style="font-size: 1.75rem; margin-bottom: 0.25rem;"></i>
+                    <h6>Estúdio de qualidade</h6>
+                </div>
+        </div>
+    </section>
     <section class="row topo" id="estudio">
         <article class="d-flex align-items-center justify-content-center col-12 col-lg-8" id="lateral" style="background-image: url(<?php the_field('fotoEstudio'); ?>); background-size: cover; background-position: center;">
             <div class="d-block d-lg-none">
